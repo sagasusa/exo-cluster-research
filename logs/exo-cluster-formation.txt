@@ -1,0 +1,27 @@
+EXO Cluster Formation Log — Dell + Mini
+Date: June 8, 2026
+
+Objective:
+Test whether two Linux nodes can automatically form an EXO cluster.
+
+Nodes:
+- Dell OptiPlex (Master candidate)
+- Mini PC (Worker candidate)
+
+Procedure:
+- Started EXO on Dell
+- Started EXO on Mini
+- Observed discovery and leader election
+
+Observed Output:
+Dell elected itself as Master.
+Mini discovered Dell and became Worker.
+
+Result:
+Successful formation of a 2-node EXO cluster.
+
+Key Finding:
+EXO automatically performs peer discovery and leader election without manual configuration.
+
+Importance:
+This was the first confirmed multi-node EXO cluster in the project.
