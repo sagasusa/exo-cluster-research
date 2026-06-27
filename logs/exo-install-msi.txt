@@ -1,0 +1,22 @@
+EXO Installation Log — MSI Laptop (WSL Debian)
+Date: June 3, 2026
+
+Objective:
+Install EXO AI framework on MSI laptop using WSL.
+
+Key Steps:
+- Installed Python 3.10+
+- Installed uv package manager
+- Installed Node.js and npm
+- Cloned EXO repository
+- Built dashboard assets
+
+Verification:
+uv run exo --help
+
+Result:
+EXO installed successfully and help menu displayed.
+
+Notes:
+Initial issue: missing exo-rs package during pip install.
+Resolution: switched to uv-based installation workflow.
