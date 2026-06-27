@@ -1,0 +1,34 @@
+WSL Networking Fix Log — MSI Windows/WSL Integration
+Date: June 20–23, 2026
+
+Objective:
+Resolve EXO node discovery failure between MSI WSL2 and external Linux nodes.
+
+Problem:
+EXO running inside WSL2 could launch locally, but Dell and Mini nodes
+could not reliably discover or communicate with the MSI node.
+
+Observed Symptoms:
+- MSI visible only intermittently
+- EXO dashboard accessible locally but not from all nodes
+- Cluster discovery failed after GPU setup
+- Zenoh communication unstable
+
+Root Cause:
+WSL2 networking isolation and Windows Hyper-V firewall rules interfered
+with EXO peer discovery and communication.
+
+Resolution Steps:
+1. Enabled mirrored networking mode for WSL2
+2. Verified MSI received LAN-reachable IP
+3. Adjusted Windows firewall / Hyper-V rules
+4. Retested inter-node connectivity using ping and service ports
+
+Verification:
+- Dell successfully reached MSI
+- EXO node discovery restored
+- Multi-node cluster formation resumed
+
+Key Finding:
+WSL networking configuration significantly affects distributed AI
+framework behavior and can become a major bottleneck in heterogeneous clusters.
