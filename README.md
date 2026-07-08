@@ -21,7 +21,8 @@ In Progress:
 Known Issues:
 - CPU worker selected over CUDA GPU in heterogeneous cluster
 - WSL networking / synchronization challenges
-- ## Describe the bug
+- Single-threaded MLX-CPU warmup stalls inference — see [detailed finding](docs/03-sharding-and-warmup-finding.md)
+## Describe the bug
 
 In a two-node heterogeneous EXO cluster with one CUDA-capable GPU node and one CPU-only node, EXO repeatedly assigned full model execution to the CPU worker while the GPU worker remained idle. This resulted in severe inference slowdown or apparent stalls.
 
